@@ -114,6 +114,12 @@ PRODUCT_PACKAGES += \
     libdrm.vendor \
     libutils-v32
 
+# Dexpreopt
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    TrebuchetQuickStep \
+    Settings \
+    SystemUI
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
