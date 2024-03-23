@@ -93,6 +93,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor
 
+# MiuiCamera
+$(call inherit-product-if-exists, vendor/xiaomi/miuicamera-ruby/miuicamera-ruby-vendor.mk)
+
+
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.device@3.6.vendor \
