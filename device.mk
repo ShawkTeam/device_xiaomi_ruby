@@ -28,12 +28,13 @@ endif
 
 # A/B
 PRODUCT_PACKAGES += \
-    android.hardware.boot-service.default \
-    android.hardware.boot-service.default_recovery
+    android.hardware.boot@1.2-impl \
+    android.hardware.boot@1.2-impl.recovery \
+    android.hardware.boot@1.2-service
 
 PRODUCT_PACKAGES += \
-    mtk_plpath_utils \
-    mtk_plpath_utils_recovery
+    create_pl_dev \
+    create_pl_dev.recovery
 
 PRODUCT_PACKAGES += \
     update_engine \
@@ -60,6 +61,8 @@ PRODUCT_PACKAGES += \
     otapreopt_script
 
 # Audio
+TARGET_EXCLUDES_AUDIOFX := true
+
 PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
     android.hardware.audio.effect@7.0-impl \
@@ -93,10 +96,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor
 
-# MiuiCamera
-$(call inherit-product-if-exists, vendor/xiaomi/miuicamera-ruby/miuicamera-ruby-vendor.mk)
-
-
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.device@3.6.vendor \
@@ -108,8 +107,8 @@ PRODUCT_PACKAGES += \
 
 # Cgroup
 PRODUCT_COPY_FILES += \
-    system/core/libprocessgroup/profiles/cgroups_30.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
-    system/core/libprocessgroup/profiles/task_profiles_30.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
+    system/core/libprocessgroup/profiles/cgroups.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
+    system/core/libprocessgroup/profiles/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
 
 # Display
 PRODUCT_PACKAGES += \
@@ -266,6 +265,10 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
+# Parts
+PRODUCT_PACKAGES += \
+    XiaomiParts
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -410,7 +413,8 @@ PRODUCT_COPY_FILES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb-service.mediatek
+    android.hardware.usb-service.mediatek \
+    android.hardware.usb.gadget-service.mediatek
 
 # Vibrator
 $(call soong_config_set, vibrator, vibratortargets, vibratoraidlV2target)
@@ -425,6 +429,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     wpa_supplicant \
     hostapd \
+    libwifi-hal-wrapper \
     android.hardware.wifi-service
 
 PRODUCT_PACKAGES += \
@@ -442,4 +447,5 @@ PRODUCT_PACKAGES += \
     vendor.xiaomi.hardware.mfidoca@1.0.vendor:64
 
 # Inherit the proprietary files
+$(call inherit-product-if-exists, device/xiaomi/miuicamera-ruby/device.mk)
 $(call inherit-product, vendor/xiaomi/ruby/ruby-vendor.mk)

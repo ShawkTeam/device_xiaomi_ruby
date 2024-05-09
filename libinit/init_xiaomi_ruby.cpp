@@ -19,7 +19,7 @@ static const variant_info_t ruby_global_info = {
     .mod_device = "ruby_global",
     .marketname = "Redmi Note 12 Pro 5G",
     .model = "22101316G",
-    .build_fingerprint = "Redmi/ruby_global/ruby:12/SP1A.210812.016/V14.0.1.0.TMOMIXM:user/release-keys"
+    .build_fingerprint = "Redmi/ruby_global/ruby:14/UP1A.230620.001/V816.0.3.0.UMOMIXM:user/release-keys"
 };
 
 static const variant_info_t rubypro_global_info = {
@@ -31,7 +31,7 @@ static const variant_info_t rubypro_global_info = {
     .mod_device = "ruby_global",
     .marketname = "Redmi Note 12 Pro+ 5G",
     .model = "22101316UG",
-    .build_fingerprint = "Redmi/rubypro_global/rubypro:12/SP1A.210812.016/V14.0.1.0.TMOMIXM:user/release-keys"
+    .build_fingerprint = "Redmi/rubypro_global/rubypro:14/UP1A.230620.001/V816.0.3.0.UMOMIXM:user/release-keys"
 };
 
 static const variant_info_t rubyplus_info = {
@@ -43,7 +43,7 @@ static const variant_info_t rubyplus_info = {
     .mod_device = "ruby",
     .marketname = "Redmi Note 12 DISCOVERY EDITION",
     .model = "22101316UC",
-    .build_fingerprint = "Redmi/rubyplus/rubyplus:12/SP1A.210812.016/V14.0.3.0.TMOCNXM:user/release-keys"
+    .build_fingerprint = "Redmi/rubyplus_global/rubyplus:14/UP1A.230620.001/V816.0.3.0.UMOMIXM:user/release-keys"
 };
 
 static const std::vector<variant_info_t> variants = {

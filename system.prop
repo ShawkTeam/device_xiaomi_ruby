@@ -3,8 +3,3 @@ dalvik.vm.dex2oat64.enabled=true
 
 # Zygote
 zygote.critical_window.minute=10
-
-# Camera
-ro.miui.notch=1
-vendor.camera.aux.packagelist=com.android.camera,org.lineageos.aperture,org.pixelexperience.faceunlock
-persist.vendor.camera.privapp.list=com.android.camera,org.lineageos.aperture

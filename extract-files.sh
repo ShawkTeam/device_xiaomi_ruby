@@ -59,7 +59,8 @@ fi
 
 function blob_fixup {
     case "$1" in
-        vendor/bin/hw/android.hardware.media.c2@1.2-mediatek)
+        vendor/bin/hw/android.hardware.media.c2@1.2-mediatek |\
+        vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service)
             "$PATCHELF" --add-needed "libstagefright_foundation-v33.so" "$2"
             ;;
         vendor/bin/hw/android.hardware.gnss-service.mediatek |\
@@ -73,7 +74,6 @@ function blob_fixup {
             sed -i 's/\t//g' "$2"
             ;;
         vendor/bin/mnld|\
-        vendor/lib*/hw/android.hardware.sensors@2.X-subhal-mediatek.so|\
         vendor/lib*/libaalservice.so)
             "$PATCHELF" --add-needed "libshim_sensors.so" "$2"
             ;;
