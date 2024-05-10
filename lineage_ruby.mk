@@ -14,6 +14,9 @@ $(call inherit-product, device/xiaomi/ruby/device.mk)
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+TARGET_SCREEN_DENSITY := 440
+TARGET_BOOT_ANIMATION_RES := 1080
+
 PRODUCT_NAME := lineage_ruby
 PRODUCT_DEVICE := ruby
 PRODUCT_MANUFACTURER := Xiaomi
