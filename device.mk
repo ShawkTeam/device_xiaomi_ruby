@@ -170,6 +170,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     IFAAService
 
+# Remove unwanted packages
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 # IMS
 PRODUCT_BOOT_JARS += \
     mediatek-common \
