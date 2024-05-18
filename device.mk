@@ -60,9 +60,6 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
-# Audio
-TARGET_EXCLUDES_AUDIOFX := true
-
 PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
     android.hardware.audio.effect@7.0-impl \
@@ -264,10 +261,6 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
-
-# Parts
-PRODUCT_PACKAGES += \
-    XiaomiParts
 
 # Permissions
 PRODUCT_COPY_FILES += \
