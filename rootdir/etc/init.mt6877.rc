@@ -58,6 +58,10 @@ on charger
 on fs
     start vendor.boot-hal-1-2
 
+    # Workaround for cache
+    rm /data/resource-cache
+    rm /data/system/package_cache
+
     # mount fstab
     mount_all --early
 
